@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <title>Heart Disease Test</title>
+</head>
+
+<body>
+    <div class="heading"
+        style="height:100px;text-align: center;text-justify: auto;font-size: 40px;">
+        <strong>Heart Disease Prediction</strong>
+    </div>
+    <style>
+        .container {
+            background-color:rgb(177, 245, 245);
+        }
+    </style>
+    <div class="container">
+        <br>
+        <!--Form-->
+        <form action="{{url_for('predict1')}}" method="POST">
+            <fieldset>
+                <legend>Heart Disease Test Form</legend><br>
+                <div style=width:500;height:50;>
+                    <label for="age">Age</label>
+                    <input type="number" class="form-control" id="age" name="age" required></input>
+                </div>
+                <div style=width:500;height:50;>
+                    <label for="sex">Sex</label>
+                    <select class="form-control" id="sex" name="sex" required>
+                        <option disabled selected value> -- Select an Option -- </option>
+                        <option value="0">Male</option>
+                        <option value="1">Female</option>
+                    </select>
+                </div>
+
+                <div style=width:500;height:50;>
+                    <label for="cp">Chest Pain Type</label>
+                    <select class="form-control" id="cp" name="cp" required>
+                        <option disabled selected value> -- Select an Option -- </option>
+                        <option value="0">Typical Angina</option>
+                        <option value="1">Atypical Angina</option>
+                        <option value="2">Non-anginal Pain</option>
+                        <option value="3">Asymptomatic</option>
+                    </select>
+                </div>
+
+                <div style=width:500;height:50;>
+                    <label for="trestbps">Resting Blood Pressure in mm Hg</label>
+                    <input type="number" class="form-control" id="trestbps" name="trestbps" required></input>
+                </div>
+
+                <div style=width:500;height:50;>
+                    <label for="chol">Serum Cholestoral in mg/dl</label>
+                    <input type="number" class="form-control" id="chol" name="chol" required></input>
+                </div>
+
+                <div style=width:500;height:50;>
+                    <label for="fbs">Fasting Blood Sugar {'>'} 120 mg/dl</label>
+                    <select class="form-control" id="fbs" name="fbs" required>
+                        <option disabled selected value> -- Select an Option -- </option>
+                        <option value="0">False</option>
+                        <option value="1">True</option>
+                    </select>
+                </div>
+
+                <div style=width:500;height:50;>
+                    <label for="restecg">Resting Electrocardiographic Results</label>
+                    <select class="form-control" id="restecg" name="restecg" required>
+                        <option disabled selected value> -- Select an Option -- </option>
+                        <option value="0">Normal</option>
+                        <option value="1">Having ST-T Wave Abnormality</option>
+                        <option value="2">Probable or Definite left ventricular Hypertrophy</option>
+                    </select>
+                </div>
+
+                <div style=width:500;height:50;>
+                    <label for="thalach">Maximum Heart Rate Received</label>
+                    <input type="number" class="form-control" id="thalach" name="thalach" required></input>
+                </div>
+
+                <div style=width:500;height:50;>
+                    <label for="exang">Exercise-Induced Angina</label>
+                    <select class="form-control" id="exang" name="exang" required>
+                        <option disabled selected value> -- Select an Option -- </option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div style=width:500;height:50;>
+                    <label for="oldpeak">ST depression induced by exercise relative to rest</label>
+                    <input type="number" step=0.01 class="form-control" id="oldpeak" name="oldpeak" required></input>
+                </div>
+
+                <div style=width:500;height:50;>
+                    <label for="slope">the slope of the peak exercise ST segment</label>
+                    <select class="form-control" id="slope" name="slope" required>
+                        <option disabled selected value> -- Select an Option -- </option>
+                        <option value="0">Upsloping</option>
+                        <option value="1">Flat</option>
+                        <option value="2">Downsloping</option>
+                    </select>
+                </div>
+
+                <div style=width:500;height:50;>
+                    <label for="ca">Number of major vessels(0-3) colored by Fluorosopy</label>
+                    <input type="number" class="form-control" id="ca" name="ca" min="0" max="3" required></input>
+                </div>
+
+                <div style=width:500;height:50;>
+                    <label for="thal">Thalassemia</label>
+                    <select class="form-control" id="thal" name="thal" required>
+                        <option disabled selected value> -- Select an Option -- </option>
+                        <option value="1">Upsloping</option>
+                        <option value="2">Flat</option>
+                        <option value="3">Downsloping</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Result">
+                </div>
+
+                <!--Prediction Result-->
+                <div id="result">
+                    <strong style="color:red">{{result}}</strong>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>

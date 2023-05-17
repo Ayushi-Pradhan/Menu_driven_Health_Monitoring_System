@@ -1,0 +1,86 @@
+<html>
+
+<head>
+    <title>Mental Health Test</title>
+</head>
+
+<body>
+    <div class="heading"
+        style="height:100px;text-align: center;text-justify: auto;font-size: 40px;">
+        <strong>Mental Health Prediction</strong>
+    </div>
+    <style>
+        .container {
+            background-color: rgb(177, 245, 245);
+            height: 100%;
+        }
+    </style>
+    <div class="container">
+        <br>
+        <!--Form-->
+        <form action="{{url_for('predict4')}}" method="POST">
+            <fieldset>
+                <legend>Mental Health Test Form</legend><br>
+                <div><label for="SE">Are you Self Employed?</label>
+                    <select class="form-control" id="SE" name="SE" required>
+                        <option disabled selected value> -- Select an Option -- </option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                </br>
+                <div><label for="PE">Is your employer primarily a tech company organisation?</label>
+                    <select class="form-control" id="PE" name="PE" required>
+                        <option disabled selected value> -- Select an Option -- </option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                </br>
+                <div><label for="PR">Is your primary role within your company related to tech/IT?</label>
+                    <select class="form-control" id="PR" name="PR" required>
+                        <option disabled selected value> -- Select an Option -- </option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                </br>
+                <div><label for="prevE">Do you have previous employers?</label>
+                    <select class="form-control" id="prevE" name="prevE" required>
+                        <option disabled selected value> -- Select an Option -- </option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                </br>
+                <div><label for="FH">Do you have a family history of Mental Illness?</label>
+                    <select class="form-control" id="FH" name="FH" required>
+                        <option disabled selected value> -- Select an Option -- </option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                </br>
+                <div><label for="MDpast">Have you had a mental health disorder in the past?</label>
+                    <select class="form-control" id="MDpast" name="MDpast" required>
+                        <option disabled selected value> -- Select an Option -- </option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                </br>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Result">
+                </div>
+
+                <!--Prediction Result-->
+                <div id="result">
+                    <strong style="color:red">{{result}}</strong>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>

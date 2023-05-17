@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <title>Diabetes Test</title>
+</head>
+
+<body>
+    <div class="heading"
+        style="height:100px;text-align: center;text-justify: auto;font-size: 40px;">
+        <strong>Diabetes Prediction</strong>
+    </div>
+    <style>
+        .container {
+            background-color: rgb(177, 245, 245);
+            height: 100%;
+        }
+    </style>
+    <div class="container">
+        <br>
+        <!--Form-->
+        <form action="{{url_for('predict3')}}" method="POST">
+            <fieldset>
+                <legend>DIABETES Test Form</legend><br>
+                <div>
+                    <label for="Pregnancies">Pregnancies</label>
+                    <input type="number" class="form-control" id="Pregnancies" name="Pregnancies" required></input>
+                </div>
+                </br>
+                <div>
+                    <label for="Glucose">Glucose</label>
+                    <input type="number" class="form-control" id="Glucose" name="Glucose" required></input>
+                </div>
+                </br>
+                <div>
+                    <label for="BloodPressure">Blood Pressure</label>
+                    <input type="number" class="form-control" id="BloodPressure" name="BloodPressure" required></input>
+                </div>
+                </br>
+                <div>
+                    <label for="SkinThickness">Skin Thickness</label>
+                    <input type="number" class="form-control" id="SkinThickness" name="SkinThickness" required></input>
+                </div>
+                </br>
+                <div>
+                    <label for="Insulin">Insulin</label>
+                    <input type="number" class="form-control" id="Insulin" name="Insulin" required></input>
+                </div>
+                </br>
+                <div>
+                    <label for="BMI">BMI</label>
+                    <input type="number" step=0.001 class="form-control" id="BMI" name="BMI" required></input>
+                </div>
+                </br>
+                <div>
+                    <label for="DiabetesPedigreeFunction">Diabetes Pedigree Function</label>
+                    <input type="number" step=0.0001 class="form-control" id="DiabetesPedigreeFunction"
+                        name="DiabetesPedigreeFunction" required></input>
+                </div>
+                </br>
+                <div>
+                    <label for="Age">Age</label>
+                    <input type="number" class="form-control" id="Age" name="Age" required></input>
+                </div>
+                </br>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Result">
+                </div>
+
+                <!--Prediction Result-->
+                <div id="result">
+                    <strong style="color:red">{{result}}</strong>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>

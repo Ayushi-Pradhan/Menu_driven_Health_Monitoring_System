@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <title>Breast Cancer test</title>
+</head>
+
+<body>
+    <div class="heading"
+        style="height:100px;text-align: center;text-justify: auto;font-size: 40px;">
+        <strong>Breast Cancer Prediction</strong>
+    </div>
+    <style>
+        .container {
+            background-color: rgb(177, 245, 245);
+        }
+    </style>
+    <div class="container">
+        <br>
+        <!--Form-->
+        <form action="{{url_for('predict2')}}" method="POST">
+            <fieldset>
+                <legend>Breast Cancer Prediction</legend><br>
+                <div>
+                    <label for="mean_radius">Mean Radius</label>
+                    <input type="number" step=0.00001 class="form-control" id="mean_radius" name="mean_radius"
+                        required></input>
+                </div>
+
+                <div>
+                    <label for="mean_texture">Mean Texture</label>
+                    <input type="number" step=0.00001 class="form-control" id="mean_texture" name="mean_texture"
+                        required></input>
+                </div>
+
+                <div>
+                    <label for="mean_perimeter">Mean Perimeter</label>
+                    <input type="number" step=0.00001 class="form-control" id="mean_perimeter" name="mean_perimeter"
+                        required></input>
+                </div>
+
+                <div>
+                    <label for="mean_area">Mean Area</label>
+                    <input type="number" step=0.00001 class="form-control" id="mean_area" name="mean_area"
+                        required></input>
+                </div>
+
+                <div>
+                    <label for="mean_smoothness">Mean Smoothness</label>
+                    <input type="number" step=0.00001 class="form-control" id="mean_smoothness" name="mean_smoothness"
+                        required></input>
+                </div>
+                <div class="form-group">
+                    <input class="btn btn-primary" type="submit" value="Result">
+                </div>
+
+                <!--Prediction Result-->
+                <div id="result">
+                    <strong style="color:red">{{result}}</strong>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
